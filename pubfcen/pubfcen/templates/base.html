@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <!-- ESTILOS Y JAVASCRIPT COMUNES -->
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %} {% endblock %}</title>
+        <meta name="author" content="Modular 3">
+        <script src="{% static 'buscador.js' %}"></script>
+        <script src="{% static 'jquery.js' %}"></script>
+        <script src="{% static 'bootstrap.js' %}"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="{% static 'ie10viewportbugworkaround.html' %}"></script>
+        <link href="{% static 'css.css' %}" rel="stylesheet" type="text/css">
+        <!-- Proxy de bootsrap.css para funcione respond.js con IE8 -->
+        <link href="{% static 'bootstrap.css' %}" rel="stylesheet">
+        <link href="{% static 'estilos.css' %}" rel="stylesheet">
+        <link href="{% static 'fontawesome.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div><!--/.nav-collapse -->
+        <div class="encabezado">
+            <div class="container">
+	            <div class="row">
+		            <div class="col-md-5">
+                        <a href="http://fcen.uncuyo.edu.ar/" title="FCEN - Facultad de Ciencias Exactas y Naturales" class="encabezado__logo">
+                            <img src="http://fcen.uncuyo.edu.ar/images/logofcenweb.png" class="img-responsive"/>
+                        </a>
+                          		  <a name="top" id="top"></a>
+                    </div>
+                <div>
+        	        <p class="jumbotron_titulo">{% block section-title %} {% endblock %}</p>
+		        </div>
+	            </div>
+            </div>
+        </div>
+        {% block content %} {% endblock %}
+    </body>
+</html>
